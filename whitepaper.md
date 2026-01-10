@@ -1,3 +1,5 @@
+# Decentralized Healthcare Financial Infrastructure
+
 # POWELL  
 **(People Wellness)**
 
@@ -7,33 +9,35 @@
 
 ## Abstract
 
-Powell is a decentralized health insurance platform built to give people ownership over their own wellness and to make healthcare more accessible, affordable, and efficient over time.
+Powell is a decentralized healthcare financial infrastructure designed to help individuals coordinate, protect, and manage healthcare-related funds in a transparent and capital-efficient way.
 
-Instead of paying non-refundable premiums, users purchase health insurance policies represented as NFTs, which define coverage terms and duration. Policy funds are pooled transparently on-chain, while medical records are anchored on-chain in a privacy-preserving format to ensure integrity, portability, and future interoperability.
+Instead of paying non-refundable premiums to centralized insurers, users commit personal healthcare capital to time-bound healthcare protection plans represented as NFTs. These NFTs define participation terms, duration, and eligible reimbursement categories. User funds are pooled transparently on-chain and remain attributable to participants throughout the lifecycle of each plan.
 
-In its initial stage, claims are reimbursement-based and managed off-chain by licensed Third-Party Administrators (TPAs). Once approved, claims are settled on-chain through smart contracts, providing transparent and auditable payouts. At the end of each policy period, any unused policy funds are automatically returned to the policyholder.
+Healthcare expenses are handled through a reimbursement-first model. Medical review, validation, and approval are performed off-chain by licensed Third-Party Administrators (TPAs) and healthcare professionals. Once approved, reimbursements are settled on-chain via smart contracts, ensuring auditable and predictable fund flows. At the end of each plan period, any unused funds are automatically returned to the participant.
 
-Powell decentralizes fund custody, accounting, and settlement while keeping medical decisions off-chain for compliance and practicality. By applying self-insurance principles, reducing administrative inefficiencies, and enabling transparent coordination at scale, Powell aims to lower global healthcare costs and build a system where high-quality healthcare is accessible to everyone—not just those who can afford expensive insurance.
+Powell decentralizes custody, accounting, and settlement of healthcare-related funds while keeping medical decisions and clinical responsibility fully off-chain. By applying collective self-insurance and cost-sharing principles, reducing administrative inefficiencies, and enabling transparent financial coordination at scale, Powell aims to lower the effective cost of healthcare and expand access to reliable healthcare protection globally.
+
+Powell does not provide medical services, make medical decisions, or act as a healthcare provider. It operates as financial infrastructure that complements existing healthcare systems.
 
 ---
 
 ## Introduction
 
-Across the world, medical costs continue to rise faster than general inflation. Each year, the price of hospital care, medication, diagnostics, and specialist treatment increases, placing growing pressure on individuals, families, and healthcare systems. Even people with insurance are increasingly exposed to higher premiums, higher deductibles, and reduced coverage.
+Across the world, healthcare costs continue to rise faster than general inflation. Hospital care, medication, diagnostics, and specialist treatments grow more expensive each year, placing increasing pressure on individuals, families, employers, and public healthcare systems. Even those with traditional insurance face rising premiums, higher deductibles, and reduced coverage certainty.
 
-At the same time, traditional health insurance is fundamentally inefficient. People are required to pay recurring premiums regardless of whether they use healthcare services. For healthy individuals, this often results in years of payments with no financial return, while the real cost of healthcare continues to inflate in the background. Over time, this model erodes personal savings and reduces access to care.
+At the same time, conventional healthcare financing models are structurally inefficient. Individuals are required to make recurring payments regardless of actual healthcare usage. When no medical expenses occur, these payments are typically lost, while healthcare costs continue to rise in the background. Over time, this model erodes personal savings and reduces long-term access to care.
 
-Powell (People Wellness) was created in response to these realities.
+Powell (People Wellness) was created in response to these challenges.
 
-Powell is built on the belief that individuals should own their health protection, especially in a world where medical costs rise year after year. Staying healthy should not mean losing money, and protecting oneself against medical risk should not require surrendering capital to opaque systems with high administrative overhead.
+Powell is built on the principle that individuals should retain ownership and visibility over the capital they commit for healthcare protection. Staying healthy should not result in permanent loss of capital, and preparing for medical risk should not require reliance on opaque financial intermediaries with misaligned incentives.
 
-By applying self-insurance principles—traditionally used by large corporations—Powell enables individuals to collectively pool health risk in a transparent and efficient way. Blockchain technology is used to manage fund custody, accounting, and settlement, ensuring that policy funds are visible, auditable, and fairly handled throughout the policy lifecycle.
+By applying self-insurance and collective cost-sharing concepts—traditionally available only to large organizations—Powell enables individuals to coordinate healthcare risk transparently and efficiently. Blockchain technology is used to manage fund custody, accounting, and settlement, ensuring that committed funds are visible, auditable, and governed by deterministic rules.
 
-Powell is designed to complement existing healthcare systems, not replace them. Medical decisions, diagnoses, and treatments remain off-chain and are handled by licensed professionals, while financial coordination is enforced by smart contracts.
+Powell is designed to complement, not replace, existing healthcare systems. Medical diagnosis, treatment, and clinical decision-making remain the responsibility of licensed professionals operating off-chain. Powell focuses exclusively on financial coordination and settlement.
 
-The platform is also built with future interoperability in mind, supporting modern healthcare data standards such as **:contentReference[oaicite:0]{index=0}**, enabling more efficient claims processing and integration over time.
+The platform is built with future interoperability in mind, supporting modern healthcare data standards such as **HL7 FHIR**, enabling more efficient reimbursement workflows and system integration over time.
 
-By reducing administrative inefficiencies, aligning incentives around wellness, and preventing unnecessary loss of capital, Powell aims to lower the effective cost of healthcare over time.
+By reducing administrative overhead, aligning incentives around wellness, and preventing unnecessary capital loss, Powell aims to lower the effective cost of healthcare while increasing transparency and trust.
 
 ---
 
@@ -41,44 +45,46 @@ By reducing administrative inefficiencies, aligning incentives around wellness, 
 
 ### Rising Medical Costs and Medical Inflation
 
-Healthcare costs continue to increase year after year due to:
+Healthcare costs continue to rise due to:
 
 - Aging populations  
-- Expensive medical technology  
+- Increasing use of advanced medical technologies  
 - Administrative inefficiencies  
-- Fragmented healthcare systems  
+- Fragmented healthcare financing systems  
 
-This medical inflation places growing pressure on individuals, employers, and governments.
+---
 
-### Inefficiency of Premium-Based Insurance
+### Inefficiency of Traditional Premium-Based Models
 
-Traditional insurance operates on sunk-cost premiums:
+Conventional healthcare financing often relies on sunk-cost payments:
 
-- Payments are non-refundable  
-- Healthy users subsidize the system  
-- Insurers benefit most when claims are low  
+- Contributions are typically non-refundable  
+- Healthy individuals receive limited financial benefit  
+- Incentives favor cost containment over user outcomes  
 
-This creates a system where being healthy is financially punished.
+This structure penalizes individuals for remaining healthy and discourages proactive wellness.
 
-### Limited Access to Self-Insurance
+---
 
-Self-insurance allows capital preservation and control, but today it is available only to:
+### Limited Access to Self-Insurance and Cost Sharing
+
+Self-insurance and collective cost-sharing models offer capital efficiency and control but are generally available only to:
 
 - Corporations  
 - Governments  
 - Large institutions  
 
-Individuals lack access to transparent, collective self-insurance tools.
+Individuals lack access to transparent, collective tools for managing healthcare financial risk.
 
 ---
 
 ## What Is Powell?
 
-Powell is a decentralized health insurance pool.
+Powell is a decentralized healthcare financial coordination system.
 
-Users purchase 1-year health insurance policies, and their funds are pooled transparently through smart contracts. Claims reduce the pool, and any unused funds are returned at the end of the policy period.
+Participants commit funds to time-bound healthcare protection plans. These funds are pooled transparently through smart contracts and used to reimburse eligible healthcare expenses following off-chain validation. Any unused funds are returned to participants at the end of each plan period.
 
-Powell does not replace healthcare providers. It coordinates financial protection, not medical decisions.
+Powell does not provide medical care, make medical determinations, or replace healthcare providers. It coordinates healthcare-related financial flows in a transparent and rules-based manner.
 
 ---
 
@@ -86,140 +92,114 @@ Powell does not replace healthcare providers. It coordinates financial protectio
 
 ### On-Chain Components
 
-- Policy NFTs (coverage terms, duration)  
+- Participation NFTs defining plan terms and duration  
 - Treasury smart contracts  
-- Settlement and refund logic  
-- Governance contracts  
+- Reimbursement and refund settlement logic  
+- Governance and parameter management contracts  
 
 ### Off-Chain Components
 
-- Healthcare providers  
+- Licensed healthcare providers  
 - Third-Party Administrators (TPAs)  
-- Claims verification systems  
+- Medical review and validation systems  
 
 ### Medical Records
 
-Medical records are anchored on-chain in a privacy-preserving format (hashes or references), ensuring:
+Medical records are not stored on-chain. Cryptographic references or hashes may be anchored on-chain to ensure:
 
 - Data integrity  
-- Auditability  
+- Verifiability  
 - Future portability  
 
-The system is designed to support interoperability with healthcare data standards such as **:contentReference[oaicite:1]{index=1}** for future integrations.
+The system supports interoperability with healthcare data standards such as **HL7 FHIR**.
 
 ---
 
-## Policy Plans & Benefit Limits
+## Participation Plans & Benefit Parameters
 
-Powell policies are issued with defined plans and benefit limits. Each policy specifies:
+Participation plans include:
 
-- Coverage duration (1 year)  
-- Maximum benefit limit  
-- Eligible claim categories  
-- Settlement rules  
+- Plan duration (typically 1 year)  
+- Maximum reimbursement limits  
+- Eligible expense categories  
+- Settlement and refund rules  
 
-The policy price represents the user’s committed capital, but coverage is not strictly limited to the policy price alone.
+Committed funds represent healthcare capital allocation rather than guaranteed payouts.
 
-If a policyholder’s approved medical claims exceed their remaining policy balance, Powell will cover the excess amount from the protocol treasury, subject to predefined limits and governance-approved parameters.
-
-This design ensures:
-
-- Predictable protection for users  
-- Risk pooling across the community  
-- Stronger confidence during high-cost medical events  
-
-Coverage beyond the policy balance is governed by:
-
-- Policy plan limits  
-- Treasury solvency rules  
-- Risk parameters set through governance  
+If approved healthcare expenses exceed a participant’s remaining balance, additional reimbursements may be sourced from shared protocol reserves, subject to predefined limits and governance-approved parameters.
 
 ---
 
 ## Numeric Examples
 
-### Example Policy
+### Example Plan
 
-- Policy price: **1,000 USDT**  
-- Admin fee (5%): **50 USDT**  
-- Net coverage pool: **950 USDT**
+- Committed amount: **1,000 USDT**  
+- Administrative fee (5%): **50 USDT**  
+- Net pooled balance: **950 USDT**
 
-### Scenario A — No Claims
+### Scenario A — No Healthcare Expenses
+- Returned to participant: **950 USDT**
 
-- Claims used: 0  
-- Returned to user: **950 USDT**
+### Scenario B — Partial Expenses
+- Returned to participant: **650 USDT**
 
-### Scenario B — Partial Claims
+### Scenario C — Full Utilization
+- Returned to participant: **0 USDT**
 
-- Claims used: 300 USDT  
-- Returned to user: **650 USDT**
-
-### Scenario C — Full Usage
-
-- Claims used: 950 USDT  
-- Returned to user: **0 USDT**
-
-### Scenario D — High Medical Cost Event
-
-- Approved claims: **1,300 USDT**  
-- Covered from policy balance: **950 USDT**  
-- Covered from treasury: **350 USDT**  
-- Returned to user: **0 USDT**
+### Scenario D — High-Cost Medical Event
+- Covered from participant balance: **950 USDT**  
+- Covered from shared reserves: **350 USDT**
 
 ---
 
 ## Fund Management & Treasury
 
-All policy funds:
+All participant funds:
 
 - Are visible on-chain  
-- Are segregated from company assets  
+- Are segregated from operational entities  
+- Are governed by deterministic smart contracts  
 - Are managed conservatively  
-- Aim to preserve value against inflation  
 
-Treasury buffers are maintained to manage claim variability and market risk.
+Treasury buffers are maintained to manage expense variability and operational risk.
 
 ---
 
-## Revenue Model & Profit Distribution
+## Revenue Model & Allocation
 
-Platform profit is distributed annually as follows:
+Annual allocation:
 
-- **60%** — Treasury (stability & solvency)  
-- **20%** — Foundation (development & ecosystem growth)  
-- **20%** — Rewards for active policyholders or governance token burn  
-
-This aligns incentives across users, contributors, and long-term sustainability.
+- **60%** — Shared reserves and system stability  
+- **20%** — Foundation and ecosystem development  
+- **20%** — Participant rewards or governance token burn  
 
 ---
 
 ## HP Token Model
 
-- **Token name:** HP  
-- **Maximum supply:** 100,000,000  
+- **Token:** HP  
+- **Max Supply:** 100,000,000  
 
 ### Utility
 
 - Governance participation  
-- Platform value capture  
+- Incentive alignment  
 - Rewards distribution  
 
-HP is not required to use Powell but strengthens long-term alignment.
+HP is optional and not required to use Powell.
 
 ---
 
 ## Governance
 
-Powell governance manages:
+Governance manages:
 
 - Protocol parameters  
 - Treasury strategy  
-- Platform upgrades  
+- System upgrades  
 
-Governance does **not** control:
-
-- Medical decisions  
-- Diagnosis or treatment  
+Governance does **not** control medical decisions or treatments.
 
 ---
 
@@ -229,90 +209,35 @@ Powell:
 
 - Is not a healthcare provider  
 - Is not a medical authority  
+- Does not provide medical advice  
 - Does not store raw medical data on-chain  
 
 ### Key Risks
 
-- Claim concentration  
-- Market volatility  
+- Healthcare expense concentration  
+- Treasury volatility  
 - Regulatory changes  
-
-These risks are mitigated through transparency, conservative management, and fixed policy periods.
 
 ---
 
 ## Roadmap
 
-### Phase 1 — Pilot & Reimbursement Model
-
-- Reimbursement-only health insurance policies  
-- NFT-based policy issuance  
-- On-chain treasury and settlement  
-- Claims managed off-chain by licensed TPAs  
-- Initial market validation  
-
-### Phase 2 — Governance Activation
-
-- Decentralized governance (DAO)  
-- Community participation in protocol parameters  
-- Treasury transparency and reporting  
-- Gradual decentralization  
-
-### Phase 3 — Ecosystem Integration
-
-- Integration with healthcare providers  
-- Improved claims workflows  
-- Preparation for healthcare system interoperability  
-
-### Phase 4 — Cashless Healthcare Claims
-
-- Cashless claims at partner providers  
-- Real-time coverage verification via NFTs  
-- On-chain settlement with off-chain validation  
-
-### Phase 5 — Community & Healthcare Infrastructure Support
-
-- Community-driven medical fundraising  
-- Decentralized medical assistance pools  
-- Healthcare infrastructure financing:
-  - Hospital expansion  
-  - Medical equipment  
-  - Health technology and tools  
-
-### Phase 6 — Global Accessibility & Expansion
-
-- Multi-region expansion  
-- Local regulatory adaptation  
-- Access for underserved populations  
-- Continuous protocol evolution  
+### Phase 1 — Reimbursement Coordination Pilot  
+### Phase 2 — Governance Activation  
+### Phase 3 — Ecosystem Integration  
+### Phase 4 — Cashless Settlement Enablement  
+### Phase 5 — Community & Infrastructure Support  
+### Phase 6 — Global Expansion  
 
 ---
 
 ## Vision
 
-Powell exists to give people ownership over their healthcare protection.
-
-Instead of losing money by staying healthy, users:
-
-- Retain ownership of their healthcare funds  
-- Receive real coverage backed by a transparent treasury  
-- Benefit from collective risk sharing  
-- Participate in governance and value creation  
-
-Powell is built for scale, efficiency, and long-term healthcare infrastructure.
+Powell exists to give people ownership and transparency over their healthcare financial protection.
 
 ---
 
 ## Conclusion
 
-Powell is a new approach to healthcare protection.
-
-Instead of paying premiums that disappear, people gain:
-
-- Capital preservation  
-- Transparent insurance coverage  
-- Collective risk protection  
-- Long-term system sustainability  
-
-**Powell is not just an insurance product.**  
-It is decentralized healthcare infrastructure—built for people to own their wellness.
+Powell is not an insurance company.  
+It is **decentralized healthcare financial infrastructure**—built for people to own, coordinate, and protect their wellness capital.
