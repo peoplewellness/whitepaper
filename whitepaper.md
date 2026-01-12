@@ -9,13 +9,15 @@
 
 ## Abstract
 
-Powell is a decentralized healthcare financial infrastructure designed to help individuals coordinate, protect, and manage healthcare-related funds in a transparent and capital-efficient way.
+Powell is a decentralized healthcare financial infrastructure designed to help individuals coordinate, protect, and manage healthcare-related funds in a transparent, privacy-preserving, and capital-efficient way.
 
-Instead of paying non-refundable premiums to centralized insurers, users commit personal healthcare capital to time-bound healthcare protection plans represented as NFTs. These NFTs define participation terms, duration, and eligible reimbursement categories. User funds are pooled transparently on-chain and remain attributable to participants throughout the lifecycle of each plan.
+Instead of paying non-refundable premiums to centralized insurers, participants commit personal healthcare capital into time-bound healthcare protection plans represented as NFTs. These NFTs define participation terms, duration, and eligible reimbursement categories. After a predefined administrative coordination fee is applied, each participant’s net contribution remains attributable to them throughout the lifecycle of the plan.
 
-Healthcare expenses are handled through a reimbursement-first model. Medical review, validation, and approval are performed off-chain by licensed Third-Party Administrators (TPAs) and healthcare professionals. Once approved, reimbursements are settled on-chain via smart contracts, ensuring auditable and predictable fund flows. At the end of each plan period, any unused funds and eligible rebates are automatically returned to the participant.
+Healthcare expenses follow a reimbursement-first model. Medical review, validation, and eligibility determinations are performed entirely off-chain by licensed Third-Party Administrators (TPAs) and healthcare professionals. Once approved, reimbursement amounts are settled on-chain via smart contracts, enabling auditable, deterministic, and predictable financial flows without exposing medical data.
 
-Powell decentralizes custody, accounting, and settlement of healthcare-related funds while keeping medical decisions and clinical responsibility fully off-chain. By applying collective self-insurance and cost-sharing principles, reducing administrative inefficiencies, and enabling transparent financial coordination at scale, Powell aims to lower the effective cost of healthcare and expand access to reliable healthcare protection globally.
+At the end of each plan period, any unused portion of a participant’s net contribution is automatically returned to that participant. Protocol revenue and treasury reserves are sourced exclusively from predefined administrative fees and governance-approved allocations from system-level surplus, and never from individual unused balances or claim denials.
+
+Powell decentralizes custody, accounting, and settlement of healthcare-related funds while keeping medical decisions, identity, and protected health information fully off-chain. By applying collective self-insurance and cost-sharing principles, reducing administrative inefficiencies, and enabling transparent financial coordination, Powell aims to lower the effective cost of healthcare and expand access to reliable healthcare protection globally.
 
 Powell does not provide medical services, make medical decisions, or act as a healthcare provider. It operates strictly as financial infrastructure that complements existing healthcare systems.
 
@@ -23,13 +25,13 @@ Powell does not provide medical services, make medical decisions, or act as a he
 
 ## Introduction
 
-Across the world, healthcare costs continue to rise faster than general inflation. Hospital care, medication, diagnostics, and specialist treatments grow more expensive each year, placing increasing pressure on individuals, families, employers, and public healthcare systems.
+Healthcare costs continue to rise faster than general inflation. Hospital care, diagnostics, medications, and specialist treatments place growing financial pressure on individuals and healthcare systems worldwide.
 
-Conventional healthcare financing models are structurally inefficient. Individuals are required to make recurring payments regardless of actual healthcare usage. When no medical expenses occur, these payments are typically lost. Over time, this model erodes personal savings and discourages proactive wellness.
+Traditional healthcare financing relies on sunk, non-refundable premiums. Healthy individuals receive little benefit for not utilizing care, while insurers retain excess capital. This structure discourages wellness and erodes long-term financial resilience.
 
 Powell (People Wellness) is built on the principle that individuals should retain ownership, transparency, and control over the capital they commit for healthcare protection. Staying healthy should not result in permanent loss of capital.
 
-Powell complements existing healthcare systems. Medical diagnosis, treatment, and clinical decisions remain off-chain and under licensed professionals. Powell focuses exclusively on decentralized financial coordination, settlement, and capital efficiency.
+Powell complements existing healthcare systems. Medical diagnosis, treatment, and eligibility decisions remain off-chain and under licensed professionals. Powell focuses exclusively on decentralized financial coordination, accounting, and settlement.
 
 ---
 
@@ -49,7 +51,7 @@ Healthcare inflation is driven by:
 
 Traditional insurance models:
 - Require sunk, non-refundable premiums  
-- Penalize healthy individuals  
+- Penalize healthy behavior  
 - Create misaligned incentives  
 
 ---
@@ -69,7 +71,7 @@ Individuals lack transparent, collective tools to manage healthcare financial ri
 
 Powell is a decentralized healthcare financial coordination protocol.
 
-Participants commit funds into time-bound healthcare protection plans. Funds are pooled transparently and reimbursed based on approved healthcare expenses. Any unused balance and eligible rebates are returned at plan maturity.
+Participants commit funds into time-bound healthcare protection plans. Funds are pooled transparently and reimbursed based on approved healthcare expenses. Any unused portion of a participant’s net contribution and eligible rebates are returned at plan maturity.
 
 Powell does not:
 - Provide medical care  
@@ -83,7 +85,7 @@ Powell does not:
 ### On-Chain Components
 - Participation NFTs (plan terms, duration)
 - Treasury smart contracts
-- Reimbursement & rebate settlement logic
+- Reimbursement and rebate settlement logic
 - Governance contracts
 
 ### Off-Chain Components
@@ -91,10 +93,69 @@ Powell does not:
 - Third-Party Administrators (TPAs)
 - Medical review and claim validation systems
 
-### Medical Records
-- No raw medical data stored on-chain
-- Optional cryptographic hashes for integrity
-- Interoperability with standards such as HL7 FHIR
+---
+
+### Privacy-Aware Architecture Overview
+
+Powell uses a hybrid architecture:
+
+**Off-Chain**
+- Medical records
+- Identity verification
+- Claim adjudication
+- Regulatory compliance (HIPAA, local laws)
+
+**On-Chain**
+- Capital pooling
+- Reimbursement settlement
+- Rebates and treasury accounting
+- Governance
+
+Medical data never enters the blockchain.
+
+---
+
+## Privacy, Data Protection, and Regulatory Alignment
+
+Healthcare data is inherently sensitive. Powell is designed with strict separation between financial coordination and medical data processing.
+
+### Design Principles
+
+1. **Data Minimization** — Only financial settlement data is handled on-chain  
+2. **Separation of Duties** — TPAs handle medical validation  
+3. **Pseudonymity** — Wallet-based interaction without identity exposure  
+4. **Selective Disclosure** — Only claim decisions reach smart contracts  
+
+---
+
+### Medical Data Flow (Off-Chain)
+
+1. User receives medical treatment  
+2. User submits documents to licensed TPA  
+3. TPA validates:
+   - Eligibility
+   - Pre-existing conditions
+   - Benefit limits
+   - Pre / post inpatient rules  
+4. TPA issues claim decision (approved / rejected / partial)  
+5. Smart contracts receive:
+   - Claim reference (hashed)
+   - Approved amount
+   - Authorization signature  
+
+No diagnoses, procedures, or identifiers are written on-chain.
+
+---
+
+### Regulatory Positioning
+
+Powell does not custody or process Protected Health Information (PHI).
+
+- HIPAA obligations apply to TPAs and providers  
+- Powell functions as financial settlement infrastructure  
+- GDPR exposure is minimized by design  
+
+Optional zero-knowledge proofs may be introduced to attest eligibility or limits without revealing medical data.
 
 ---
 
@@ -129,74 +190,50 @@ System-wide:
 - Rₚ = Rebate pool ratio  
 - RP = PS × Rₚ  
 
-Utilization ratio:
+Utilization ratio:  
 URᵢ = Cᵢ / Nᵢ  
 
-Rebate weight:
+Rebate weight:  
 Wᵢ = max(0, 1 − URᵢ)  
 
-Rebate allocation:
+Rebate allocation:  
 RBᵢ = RP × (Wᵢ / ΣW)  
 
-Final payout:
+Final payout:  
 Payoutᵢ = Uᵢ + RBᵢ  
 
 ---
 
 ## Rebate Examples
 
-### Zero Utilization
-- Deposit: 1,000  
-- Claims: 0  
-- Returned: 950 + rebate
-
-### Moderate Utilization
-- Claims: 400  
-- Returned: unused + proportional rebate
-
-### High Utilization
-- Claims: 900  
-- Returned: minimal rebate
-
-### Full Utilization
-- Claims: 950  
-- Returned: 0 (no penalty)
+- **Zero utilization:** full unused return + highest rebate weight  
+- **Moderate utilization:** partial unused return + proportional rebate  
+- **High utilization:** minimal rebate, no penalty  
+- **Full utilization:** no unused balance, no rebate  
 
 ---
 
 ## Treasury Stress Test & Worst-Case Drawdown
 
-### Assumptions
-- 10,000 users  
-- Average net contribution: 1,000  
-- Total pool: 10,000,000  
+Powell enforces strict caps on reserve utilization.
 
-### Scenario A — Normal Year
-- Claims: 35%  
-- Surplus grows, rebates distributed
+- Normal year: surplus grows  
+- High utilization year: rebates shrink  
+- Tail risk event: capped treasury drawdown  
+- Black swan: coverage limited, solvency preserved  
 
-### Scenario B — High Utilization
-- Claims: 80%  
-- Reduced rebates, no drawdown
-
-### Scenario C — Tail Risk
-- Claims: 95%  
-- Treasury drawdown capped by governance
-
-### Scenario D — Black Swan
-- Claims exceed pool  
-- Coverage capped, solvency preserved
-
-Powell prioritizes solvency and predictability over unlimited guarantees.
+Powell prioritizes predictability and solvency over unlimited guarantees.
 
 ---
 
 ## Fund Management & Treasury
 
-- Funds are visible on-chain
-- Segregated from operators
-- Governed by deterministic rules
-- Reserve utilization capped
+- Participant funds are visible on-chain
+- Individual unused balances always return to participants
+- Protocol revenue comes exclusively from:
+  - Predefined administrative fees
+  - Governance-approved allocations from system-level surplus
+- The protocol never profits from claim denial or withheld balances
 
 ---
 
@@ -253,11 +290,11 @@ Key risks:
 
 ## Roadmap
 
-**Phase 1:** Reimbursement Pilot  
+**Phase 1:** Reimbursement Coordination Pilot  
 **Phase 2:** Governance Activation  
 **Phase 3:** Ecosystem Integration  
-**Phase 4:** Cashless Settlement  
-**Phase 5:** Community & Infrastructure  
+**Phase 4:** Cashless Settlement Enablement  
+**Phase 5:** Community & Infrastructure Support  
 **Phase 6:** Global Expansion  
 
 ---
